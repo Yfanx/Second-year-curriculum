@@ -1,0 +1,3 @@
+D:/Learn-myself/Second-year-curriculum/expression conversion/cmake-build-debug/CMakeFiles/expression_conversion.dir
+D:/Learn-myself/Second-year-curriculum/expression conversion/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Learn-myself/Second-year-curriculum/expression conversion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
