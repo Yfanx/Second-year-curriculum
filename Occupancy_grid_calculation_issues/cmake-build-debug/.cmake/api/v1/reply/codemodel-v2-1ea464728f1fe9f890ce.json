@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Occupancy_grid_calculation_issues",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Occupancy_grid_calculation_issues::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Occupancy_grid_calculation_issues-Debug-9b5fd3d5ceb50adeeece.json",
+					"name" : "Occupancy_grid_calculation_issues",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Learn-myself/Second-year-curriculum/Occupancy_grid_calculation_issues/cmake-build-debug",
+		"source" : "D:/Learn-myself/Second-year-curriculum/Occupancy_grid_calculation_issues"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
