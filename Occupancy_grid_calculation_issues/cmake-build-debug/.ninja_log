@@ -1,3 +1,17 @@
 # ninja log v5
 0	360	7254288829668075	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
 361	759	7254288833530531	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
+0	793	7254307297591620	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
+794	962	7254307298962698	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
+0	409	7254307556821969	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
+410	570	7254307558127099	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
+1	388	7254308285409883	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
+389	555	7254308286760890	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
+1	367	7254311209764318	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
+368	527	7254311211054914	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
+1	399	7254312327817281	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
+400	567	7254312329132407	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
+0	379	7254313239585244	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
+379	756	7254313243029881	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
+1	376	7254314453486487	CMakeFiles/Occupancy_grid_calculation_issues.dir/main.cpp.obj	3997e3476ed9567b
+377	533	7254314454751691	Occupancy_grid_calculation_issues.exe	7b8ce68c7897af49
