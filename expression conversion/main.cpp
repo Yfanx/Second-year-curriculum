@@ -27,6 +27,11 @@ string postfixToInfix(const string& postfixExpression) {
     return stk.top();
 }
 
+// 删除最外层的括号
+string removeOuterParentheses(const string& infixExpression) {
+    return infixExpression.substr(1, infixExpression.length() - 2);
+}
+
 int main() {
     cout << "请输入后缀表达式: " << endl;
 
@@ -35,9 +40,9 @@ int main() {
     getline(cin,postfixExpression);       //输入后缀表达式
 
     string infixExpression = postfixToInfix(postfixExpression);
+    infixExpression = removeOuterParentheses(infixExpression);
 
     cout << "后缀表达式: " << postfixExpression << endl;
     cout << "中缀表达式: " << infixExpression << endl;
-//text
     return 0;
 }
