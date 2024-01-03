@@ -1,9 +1,8 @@
-//
-// Created by 86198 on 2024/1/3.
-//
-#include "File1.h"
+#include "File3.h"
+#include <iostream>
 
-void change(int x)
+void printf()
 {
-    x = x * 2;
+    change(x);
+    std::cout << x << std::endl;
 }

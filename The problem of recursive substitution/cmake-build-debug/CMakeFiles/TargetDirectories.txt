@@ -1,3 +1,0 @@
-D:/Learn-myself/Second-year-curriculum/The problem of recursive substitution/cmake-build-debug/CMakeFiles/The_problem_of_recursive_substitution.dir
-D:/Learn-myself/Second-year-curriculum/The problem of recursive substitution/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Learn-myself/Second-year-curriculum/The problem of recursive substitution/cmake-build-debug/CMakeFiles/rebuild_cache.dir

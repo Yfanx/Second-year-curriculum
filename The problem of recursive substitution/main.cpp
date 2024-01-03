@@ -49,7 +49,7 @@ std::string processFile(const std::string &filename, std::unordered_map<std::str
 
 int main(int argc, char *argv[])
 {
-    std::string rootFilename = "MainText.cpp"; // Change to your root file name
+    std::string rootFilename = "MainNested.cpp"; // Change to your root file name
     std::unordered_map<std::string, bool> visited;
     visited[rootFilename] = true;
 

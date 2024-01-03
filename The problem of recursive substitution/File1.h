@@ -1,5 +1,7 @@
-//
-// Created by 86198 on 2024/1/3.
-//
+#include "File2.h"
 
-const int x = 1;
+void change(int x)
+{
+
+    x = x * 2;
+}
