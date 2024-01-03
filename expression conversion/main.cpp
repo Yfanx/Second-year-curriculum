@@ -36,7 +36,7 @@ public:
     // 出栈操作
     string pop() {
         if (isEmpty()) {
-            throw runtime_error("Stack is empty"); // 栈为空时抛出异常
+            throw exception("Stack underflow"); // 栈为空时抛出异常
         }
         string data = top->data;             // 保存栈顶数据
         StackNode* temp = top;               // 临时保存栈顶节点
@@ -48,7 +48,7 @@ public:
     // 获取栈顶元素
     string peek() const {
         if (isEmpty()) {
-            throw runtime_error("Stack is empty"); // 栈为空时抛出异常
+            throw exception("Stack is empty"); // 栈为空时抛出异常
         }
         return top->data; // 返回栈顶数据
     }
@@ -70,28 +70,44 @@ bool isEmpty(char c){
     return (c == ' ');
 }
 
+// 判断字符是否为操作数
+bool isOperand(char c) {
+    return (c >= '0' && c <= '9'|| c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z');
+}
+
 // 后缀表达式转中缀表达式
 string postfixToInfix(const string& postfixExpression) {
     Stack stk; // 创建栈对象
-
     for (char token : postfixExpression) {
-        string str(1, token); // 将字符转换为字符串
-
-        if (!isOperator(token)) {
-            if(isEmpty(token)){
-                continue;
+        if (isEmpty(token)) {
+            continue;
+        } else if (isOperator(token)) {
+            // 检查栈是否有足够的操作数
+            if (stk.isEmpty()) {
+                throw runtime_error("Invalid postfix expression: insufficient operands");
             }
-            stk.push(str); // 如果是操作数，直接入栈
-        } else {
-            // 如果是操作符，从栈中弹出两个操作数
             string operand2 = stk.pop();
+            if (stk.isEmpty()) {
+                throw runtime_error("Invalid postfix expression: insufficient operands");
+            }
             string operand1 = stk.pop();
-            // 构造中缀表达式并将其入栈
-            string infixExpression = "(" + operand1 + " " + str + " " + operand2 + ")";
-            stk.push(infixExpression);
+            stk.push("(" + operand1 + " " + token + " " + operand2 + ")");
+        } else if (isOperand(token)) {
+            stk.push(string(1, token));
+        } else {
+            throw runtime_error(string("Invalid character encountered: ") + token);
         }
     }
-    return stk.peek(); // 返回栈顶元素，即最终的中缀表达式
+
+    // 现在栈中理论上只有一个元素，即最终的中缀表达式
+    string result = stk.peek(); // 获取栈顶元素但不移除
+    stk.pop();                  // 移除栈顶元素
+
+    // 如果栈不为空，说明后缀表达式不合法
+    if (!stk.isEmpty()) {
+        throw runtime_error("Invalid postfix expression: too many operands");
+    }
+    return result;
 }
 
 // 删除最外层的括号
@@ -113,9 +129,10 @@ int main() {
         // 输出结果
         cout << "后缀表达式: " << postfixExpression << endl;
         cout << "中缀表达式: " << infixExpression << endl;
-    } catch (const runtime_error& e) {
+    } catch (const exception& e) {
         cout << "Error: " << e.what() << endl;
     }
 
     return 0;
 }
+
