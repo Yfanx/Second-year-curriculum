@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 // 深度优先搜索
 void DFS(vector<vector<int>>& grid, int i, int j, vector<vector<bool>>& visited, int& size) {
     if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == 0 || visited[i][j]) {
@@ -21,7 +20,11 @@ void DFS(vector<vector<int>>& grid, int i, int j, vector<vector<bool>>& visited,
 }
 
 // 给定组中的某个方格，计算组的大小
-int get_group_size(vector<vector<int>>& grid, int i, int j) {
+int get_group_size(vector<vector<int>>& grid, int i, int j,int n) {
+    if(i>=n||j>=n||i<0||j<0){
+
+        return 0;
+    }
     vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
     int size = 0;
     DFS(grid, i, j, visited, size);
@@ -57,7 +60,7 @@ void list_all_groups(vector<vector<int>>& grid) {
                 // 新的组开始
                 int size = 0;
                 DFS(grid, i, j, visited, size);
-                cout << "Group" << "[" << a++ << "] size: " << size << endl;
+                cout << "Group" << "[" << a++ +1 << "] size: " << size << endl;
             }
         }
     }
@@ -75,23 +78,24 @@ int main() {
     for(int i = 0; i < n; ++i){
         for(int j = 0; j < n; ++j){
             cin >> grid[i][j];
+            if(grid[i][j] != 0 && grid[i][j] != 1){
+                cout << "输入的网格不合法" << endl;
+                j--;
+            }
         }
     }
-
-    /*0 0 0 0 0 1
-      0 1 1 0 0 1
-      0 0 0 0 0 0
-      0 1 0 1 0 0
-      1 0 0 1 0 0
-      0 0 0 1 1 0*/
 
     // 1) 给定组中的某个方格，计算组的大小
     cout <<"请输入组的起始方格的坐标：" << endl;
     int x, y;
     cin >> x >> y;
 
-    int group_size = get_group_size(grid, x, y);
-    printf("[%d, %d]所在的组的大小是： %d\n", x, y, group_size);
+    int group_size = get_group_size(grid, x, y, n);
+    if(x>=n||y>=n||x<0||y<0){
+        cout << "输入的坐标不在网格内" << endl;
+    }else{
+        printf("[%d, %d]所在的组的大小是： %d\n", x, y, group_size); // 行列坐标从0开始
+    } //判断输入的坐标是否在网格内
 
     // 2) 计算不同组的数量
     int num_groups = count_groups(grid);
@@ -102,3 +106,10 @@ int main() {
 
     return 0;
 }
+
+/*0 0 0 0 0 1
+0 1 1 0 0 1
+0 0 0 0 0 0
+0 1 0 1 0 0
+1 0 0 1 0 0
+0 0 0 1 1 0*/

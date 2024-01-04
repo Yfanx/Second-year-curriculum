@@ -84,11 +84,11 @@ string postfixToInfix(const string& postfixExpression) {
         } else if (isOperator(token)) {
             // 检查栈是否有足够的操作数
             if (stk.isEmpty()) {
-                throw runtime_error("Invalid postfix expression: insufficient operands");
+                throw exception("Invalid postfix expression: insufficient operands");
             }
             string operand2 = stk.pop();
             if (stk.isEmpty()) {
-                throw runtime_error("Invalid postfix expression: insufficient operands");
+                throw exception("Invalid postfix expression: insufficient operands");
             }
             string operand1 = stk.pop();
             stk.push("(" + operand1 + " " + token + " " + operand2 + ")");
